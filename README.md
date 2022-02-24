@@ -1,2 +1,2 @@
-# uv-app
+# Ultraviolet
 Ultraviolet application
