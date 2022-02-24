@@ -5,7 +5,6 @@ Ultraviolet application
 [![Run on Replit](https://raw.githubusercontent.com/BinBashBanana/deploy-buttons/master/buttons/remade/replit.svg)](https://replit.com/github/titaniumnetwork-dev/uv-app)
 
 # Steps
-
 Installing on machine
 
 ```
@@ -18,7 +17,6 @@ npm start
 On Repl, make sure to run the `git submodule update --init` command in shell.
 
 # Ultraviolet Config
-
 `uv.config.js`
 
 ```javascript
