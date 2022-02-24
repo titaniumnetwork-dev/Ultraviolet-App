@@ -1,4 +1,4 @@
-import { Server } from './tomp/Server.mjs';
+import { Server } from './bare/Server.mjs';
 import { readFileSync } from 'fs';
 import https from 'https';
 import nodeStatic from 'node-static';
