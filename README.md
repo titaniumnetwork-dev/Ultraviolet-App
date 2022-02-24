@@ -13,6 +13,8 @@ git submodule update --init
 npm install
 npm start
 ```
+On Repl, make sure to run the `git submodule update --init` command in shell.
+
 
 `uv.config.js`
 
