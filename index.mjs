@@ -1,16 +1,13 @@
 import { Server } from './tomp/Server.mjs';
 import { readFileSync } from 'fs';
-import https from 'https';
+import http from 'http';
 import nodeStatic from 'node-static';
 
 
 const bare =  new Server('/bare/', '');
 const serve = new nodeStatic.Server('static/');
 
-const server = https.createServer({
-    key: readFileSync('ssl/default.key', 'utf-8'),
-    cert: readFileSync('ssl/default.cert', 'utf-8')
-});
+const server = http.createServer();
 
 server.on('request', (request, response) => {
     if (bare.route_request(request, response)) return true;
@@ -22,4 +19,4 @@ server.on('upgrade', (req, socket, head) => {
 	socket.end();
 });
 
-server.listen(443);
+server.listen(process.env.PORT || 8080);
