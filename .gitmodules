@@ -1,0 +1,6 @@
+[submodule "bare"]
+	path = bare
+	url = https://github.com/tomphttp/bare-server-node.git
+[submodule "static"]
+	path = static
+	url = https://github.com/titaniumnetwork-dev/ultraviolet-site.git
