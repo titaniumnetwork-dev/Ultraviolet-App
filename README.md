@@ -9,6 +9,7 @@ Deploying on machine
 ```
 git clone https://github.com/titaniumnetwork-dev/uv-app/
 cd uv-app
+git submodule update --init
 npm install
 npm start
 ```
