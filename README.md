@@ -8,8 +8,8 @@ Ultraviolet application
 Installing on machine
 
 ```
-git clone https://github.com/titaniumnetwork-dev/uv-app/
-cd uv-app
+git clone https://github.com/titaniumnetwork-dev/ultraviolet-web-app/
+cd ultraviolet-web-app
 git submodule update --init
 npm install
 npm start
