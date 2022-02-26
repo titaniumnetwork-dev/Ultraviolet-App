@@ -9,7 +9,7 @@ Installing on machine
 
 ```
 git clone https://github.com/titaniumnetwork-dev/ultraviolet-web-app/
-cd ultraviolet-web-app
+cd ultraviolet-node
 git submodule update --init
 npm install
 npm start
