@@ -1,4 +1,4 @@
-import { Server } from './bare/Server.mjs';
+import Server from './bare/Server.mjs';
 import { readFileSync } from 'fs';
 import http from 'http';
 import nodeStatic from 'node-static';
