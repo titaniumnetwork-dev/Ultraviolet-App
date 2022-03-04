@@ -1,2 +1,2 @@
-language = "bash"
+language = "nodejs"
 run = "bash main.sh"
