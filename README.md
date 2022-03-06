@@ -12,6 +12,7 @@ git clone https://github.com/titaniumnetwork-dev/ultraviolet-node/
 cd ultraviolet-node
 git submodule update --init
 npm install
+npm install tomphttp/bare-server-node
 npm start
 ```
 On Repl, make sure to run the `git submodule update --init` command in shell.
