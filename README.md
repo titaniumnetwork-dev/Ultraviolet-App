@@ -20,12 +20,12 @@ The deployable version of Ultraviolet, a highly sophisticated proxy used for eva
 
 ## Table of Contents
 - [Installation And Setup](#installation-and-setup)
-    - [Basic Guide](#basic-guide)
-    - [Replit Setup Guide](#replit-setup-guide)
-    - [Comprehensive Guide](#comprehensive-guide)
-    - [Configuration](#configuration)
-    - [Frontend](#static-files)
-    - [Core Scripts](#core-scripts)
+- [Basic Guide](#basic-guide)
+- [Replit Setup Guide](#replit-setup-guide)
+- [Comprehensive Guide](#comprehensive-guide)
+- [Configuration](#configuration)
+- [Frontend](#static-files)
+- [Core Scripts](#core-scripts)
 
 # Installation and Setup
 
