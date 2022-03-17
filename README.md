@@ -1,8 +1,25 @@
-# Ultraviolet-Node
-The deployable version of Ultraviolet.
+<p align="center">
+    <img src="https://raw.githubusercontent.com/titaniumnetwork-dev/ultraviolet-static/main/uv.png"
+        height="200">
+</p>
+
+<h1 align="center">
+    Ultraviolet-Node
+</h1>
+
+<p align="center">
+The deployable version of Ultraviolet, a highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers and more! 
+</p>
 
 [![Deploy to Heroku](https://raw.githubusercontent.com/BinBashBanana/deploy-buttons/master/buttons/remade/heroku.svg)](https://heroku.com/deploy/?template=https://github.com/titaniumnetwork-dev/Ultraviolet-Node)
 [![Run on Replit](https://raw.githubusercontent.com/BinBashBanana/deploy-buttons/master/buttons/remade/replit.svg)](https://replit.com/github/titaniumnetwork-dev/Ultraviolet-Node)
+
+## Supported Sites
+- [Youtube](https://www.youtube.com)
+- [Spotify](https://spotify.com)
+- [Discord](https://discord.com)
+- [Reddit](https://reddit.com)
+- [GeForce NOW](https://play.geforcenow.com/) (Partially Supported)
 
 ## Table of Contents
 - [Installation And Setup](#installation-and-setup)
@@ -20,7 +37,7 @@ Installation of Ultraviolet is simple. You can find a Tl;Dr of the installation 
 ## Basic Guide
 
 ```sh
-$ git clone --recursive https://github.com/titaniumnetwork-dev/Ultraviolet-Node
+$ git clone https://github.com/titaniumnetwork-dev/Ultraviolet-Node --recursive
 $ cd Ultraviolet-Node
 $ npm install
 $ npm start
