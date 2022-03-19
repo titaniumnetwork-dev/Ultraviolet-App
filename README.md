@@ -3,20 +3,40 @@
 
 <h1 align="center">Ultraviolet-Node</h1>
 
-<p align="center">
-The deployable version of Ultraviolet, a highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers and more! 
-</p>
+<p align="center">The deployable version of Ultraviolet, a highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers and more!<br><br></p>
 
+## Quick Deployments
 [![Deploy to Heroku](https://raw.githubusercontent.com/BinBashBanana/deploy-buttons/master/buttons/remade/heroku.svg)](https://heroku.com/deploy/?template=https://github.com/titaniumnetwork-dev/Ultraviolet-Node)
 [![Run on Replit](https://raw.githubusercontent.com/BinBashBanana/deploy-buttons/master/buttons/remade/replit.svg)](https://replit.com/github/titaniumnetwork-dev/Ultraviolet-Node)
 
+## Features
+- CAPTCHA support along with hCAPTCHA support
+- URL encoding settings to further hide activity when using Ultraviolet
+- Configuration all done on the client-side via service-workers
+- Speed in comparison to other web proxies that fully proxy content
+- Blacklist setting and more for easy hosting
+- Security in mind and leak prevention
+- Frequent updates to improve site support or fix security issues
+
 ## Supported Sites
 - [Youtube](https://www.youtube.com)
+- [CAPTCHA/hCAPTCHA](https://www.captcha.net)
 - [Spotify](https://spotify.com)
 - [Discord](https://discord.com)
 - [Reddit](https://reddit.com)
 - [GeForce NOW](https://play.geforcenow.com/) (Partially Supported)
 - And more!
+
+## Technologies Used
+- Service Workers
+- HTML, JS, CSS rewriting
+- Parse5
+- Acorn.js
+
+## Used by
+- [Incognito](https://github.com/caracal-js/Incognito), a popular web proxy service with focus on privacy
+- [Holy-Unblocker](https://github.com/titaniumnetwork-dev/Holy-Unblocker), a popular web proxy service focusing on bypassing web filters and more
+- [Hypertabs](titaniumnetwork.org/), a web proxy service using a PWA browser as its frontend
 
 ## Table of Contents
 - [Installation And Setup](#installation-and-setup)
@@ -29,7 +49,7 @@ The deployable version of Ultraviolet, a highly sophisticated proxy used for eva
 
 # Installation and Setup
 
-Installation of Ultraviolet is simple. You can find a Tl;Dr of the installation and setup process just below. If you are unfamiliar with the "standard" installation process, look a bit farther down for a more comprehensive installation and setup guide.
+Installation of Ultraviolet is simple. You can find a Tl;DR of the installation and setup process just below. If you are unfamiliar with the "standard" installation process, look a bit farther down for a more comprehensive installation and setup guide.
 
 ## Basic Guide
 
@@ -123,3 +143,24 @@ Static files is the frontend for Ultraviolet. A standalone repository for it can
 ## Core Scripts
 
 [Configuration](#configuration) mentions a few scripts that make up Ultraviolet. To get documentation for what each of the scripts do, check out the [documentation](https://github.com/titaniumnetwork-dev/Ultraviolet-Core) for them in their standalone repository.
+
+# Main Scripts After Building
+
+The client-hooking & service worker scripts required for UV are located in [ultraviolet-scripts](https://github.com/titaniumnetwork-dev/ultraviolet-scripts)
+
+- Scripts
+    - `uv.sw.js` Service worker gateway
+    - `uv.sw-handler.js` - Service worker handler
+    - `uv.bundle.js` Webpack compiled Ultraviolet rewriter
+    - `uv.handler.js` Client-side hooking
+    - `uv.config.js` Configuration
+
+# Authors
+
+- Caracal.js (Creator of Ultraviolet)
+- Divide (Creator of TOMP)
+
+# Credits
+- https://github.com/tomphttp
+
+
