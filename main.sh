@@ -1,5 +1,5 @@
 #!/bin/bash
-# Set this to 0 to automatically attempt a fix when an error occurs while running npm start. Set this to any other integer to disable.
+# Set this to 1 to automatically attempt a fix when an error occurs while running npm start. Set this to any other integer to disable.
 fix=1
 
 
