@@ -58,7 +58,7 @@ $ npm start
 
 ## Replit Setup Guide
 
-To setup on Replit, first click on the "Run on Replit" button. After loading into your repl, click on the green "Run" button. Alternatively, run the following commands:
+To setup on Replit, import this github repo. After loading into your repl, click on the green "Run" button. Alternatively, run the following commands:
 
 ```sh
 $ chmod +x main.sh
