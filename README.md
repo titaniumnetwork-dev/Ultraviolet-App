@@ -6,6 +6,7 @@
 <p align="center">The deployable version of Ultraviolet, a highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers and more!<br><br></p>
 
 ## Features
+
 - CAPTCHA support along with hCAPTCHA support
 - URL encoding settings to further hide activity when using Ultraviolet
 - Configuration all done on the client-side via service-workers
@@ -15,6 +16,7 @@
 - Frequent updates to improve site support or fix security issues
 
 ## Supported Sites
+
 - [Youtube](https://www.youtube.com)
 - [CAPTCHA/hCAPTCHA](https://www.captcha.net)
 - [Spotify](https://spotify.com)
@@ -24,17 +26,20 @@
 - And more!
 
 ## Technologies Used
+
 - Service Workers
 - HTML, JS, CSS rewriting
 - Parse5
 - Acorn.js
 
 ## Used by
+
 - [Incognito](https://github.com/caracal-js/Incognito), a popular web proxy service with focus on privacy
 - [Holy-Unblocker](https://github.com/titaniumnetwork-dev/Holy-Unblocker), a popular web proxy service focusing on bypassing web filters and more
 - [Hypertabs](titaniumnetwork.org/), a web proxy service using a PWA browser as its frontend
 
 ## Table of Contents
+
 - [Installation And Setup](#installation-and-setup)
 - [Basic Guide](#basic-guide)
 - [Replit Setup Guide](#replit-setup-guide)
@@ -100,38 +105,39 @@ Finally, to start Ultraviolet, run the following command:
 $ npm start
 ```
 
-You can then find Ultraviolet on `http://127.0.0.1:8080`. If you would like to change the port UV will be running on, edit the last line in `index.mjs`. 
+You can then find Ultraviolet on `http://127.0.0.1:8080`. If you would like to change the port UV will be running on, edit the last line in `index.mjs`.
 
-Please note that UV will not function without HTTPS. If you are hosting on Replit or Heroku, this won't be a problem as they provide you with SSL/TLS by default and will automatically apply it to your instance, however if you are attempting to host UV on a different platform, such as a personal server, you **WILL** need to use HTTPS. 
+Please note that UV will not function without HTTPS. If you are hosting on Replit or Heroku, this won't be a problem as they provide you with SSL/TLS by default and will automatically apply it to your instance, however if you are attempting to host UV on a different platform, such as a personal server, you **WILL** need to use HTTPS.
 
 ## Configuration
+
 Configuring Ultraviolet is very simple. Simple descriptions of each configurable option are provided as a comment in the block below. More detailed documentation can be found just below mentioned block.
 
 `uv.config.js`
 
 ```javascript
 self.__uv$config = {
-    prefix: '/sw/', // Proxy url prefix
-    bare: '/bare/', // Bare server location
-    encodeUrl: Ultraviolet.codec.xor.encode, // URL Encoding function
-    decodeUrl: Ultraviolet.codec.xor.decode, // Decode URL function
-    handler: '/uv.handler.js', // Handler script
-    bundle: '/uv.bundle.js', // Bundled script
-    config: '/uv.config.js', // Configuration script
-    sw: '/uv.sw.js', // Service Worker Script
+  prefix: "/sw/", // Proxy url prefix
+  bare: "/bare/", // Bare server location
+  encodeUrl: Ultraviolet.codec.xor.encode, // URL Encoding function
+  decodeUrl: Ultraviolet.codec.xor.decode, // Decode URL function
+  handler: "/uv.handler.js", // Handler script
+  bundle: "/uv.bundle.js", // Bundled script
+  config: "/uv.config.js", // Configuration script
+  sw: "/uv.sw.js", // Service Worker Script
 };
 ```
 
-| Configuration | Options and Explanation |
-| ------------- | ----------------------- |
-| Prefix | The prefix is the prefix that you want users to see. Ex: `https://example.com/service.` The default prefix is `service`. |
-| Bare | Bare Servers can run on directories. For example, if the directory was /bare/ then the bare origin would look like `http://example.org/bare/`. The bare origin is passed to clients. |
-| encodeUrl| EncodeUrl is how you want the URL a proxy site's visitors has to be encoded. Options include `Ultraviolet.codec.base64.encode`, `Ultraviolet.codec.plain.encode`, or `Ultraviolet.codec.xor.encode`. It is recommended that you use `xor` or `base64` as it hides the queries your visitors are searching and visiting.
-| decodeURL | DecodeUrl is how you want the url to be decoded. It is recommended you keep it the same as `encodeUrl`. |
-| Handler | Handler is the path to the UV handler. The default name and path to this file is `static/uv/uv.handler.js`. |
-| Bundle | Bundle is the path to the UV bundle file. The default name and path to this file is `static/uv/uv.bundle.js`. |
-| Config | Config is the path to the UV config file. The default name and path to this file is `static/uv/uv.bundle.js`. |
-| SW | SW is the path to the UV Service Worker script. The default name and path to this file is `static/uv/uv.sw.js`. |
+| Configuration | Options and Explanation                                                                                                                                                                                                                                                                                                 |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Prefix        | The prefix is the prefix that you want users to see. Ex: `https://example.com/service.` The default prefix is `service`.                                                                                                                                                                                                |
+| Bare          | Bare Servers can run on directories. For example, if the directory was /bare/ then the bare origin would look like `http://example.org/bare/`. The bare origin is passed to clients.                                                                                                                                    |
+| encodeUrl     | EncodeUrl is how you want the URL a proxy site's visitors has to be encoded. Options include `Ultraviolet.codec.base64.encode`, `Ultraviolet.codec.plain.encode`, or `Ultraviolet.codec.xor.encode`. It is recommended that you use `xor` or `base64` as it hides the queries your visitors are searching and visiting. |
+| decodeURL     | DecodeUrl is how you want the url to be decoded. It is recommended you keep it the same as `encodeUrl`.                                                                                                                                                                                                                 |
+| Handler       | Handler is the path to the UV handler. The default name and path to this file is `static/uv/uv.handler.js`.                                                                                                                                                                                                             |
+| Bundle        | Bundle is the path to the UV bundle file. The default name and path to this file is `static/uv/uv.bundle.js`.                                                                                                                                                                                                           |
+| Config        | Config is the path to the UV config file. The default name and path to this file is `static/uv/uv.bundle.js`.                                                                                                                                                                                                           |
+| SW            | SW is the path to the UV Service Worker script. The default name and path to this file is `static/uv/uv.sw.js`.                                                                                                                                                                                                         |
 
 ## Static Files
 
@@ -146,11 +152,11 @@ Static files is the frontend for Ultraviolet. A standalone repository for it can
 The client-hooking & service worker scripts required for UV are located in [ultraviolet-scripts](https://github.com/titaniumnetwork-dev/ultraviolet-scripts)
 
 - Scripts
-    - `uv.sw.js` Service worker gateway
-    - `uv.sw-handler.js` - Service worker handler
-    - `uv.bundle.js` Webpack compiled Ultraviolet rewriter
-    - `uv.handler.js` Client-side hooking
-    - `uv.config.js` Configuration
+  - `uv.sw.js` Service worker gateway
+  - `uv.sw-handler.js` - Service worker handler
+  - `uv.bundle.js` Webpack compiled Ultraviolet rewriter
+  - `uv.handler.js` Client-side hooking
+  - `uv.config.js` Configuration
 
 # Authors
 
@@ -158,6 +164,5 @@ The client-hooking & service worker scripts required for UV are located in [ultr
 - Divide (Creator of TOMP)
 
 # Credits
+
 - https://github.com/tomphttp
-
-

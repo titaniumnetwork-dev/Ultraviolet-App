@@ -16,5 +16,9 @@
     "proxy"
   ],
   "author": "",
-  "license": "GPL-3.0-or-later"
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "prettier": "^2.7.1"
+  }
 }
