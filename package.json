@@ -1,24 +1,22 @@
 {
-  "dependencies": {
-    "@tomphttp/bare-server-node": "^1.0.2-beta-readme2",
-    "bare-server-node": "github:tomphttp/bare-server-node",
-    "serve-static": "^1.15.0"
-  },
-  "name": "uv-app",
-  "version": "1.0.0",
-  "description": "Ultraviolet instance",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ."
-  },
-  "keywords": [
-    "proxy"
-  ],
-  "author": "",
-  "license": "GPL-3.0-or-later",
-  "devDependencies": {
-    "eslint": "^8.23.0",
-    "prettier": "^2.7.1"
-  }
+	"name": "uv-app",
+	"version": "1.0.0",
+	"description": "Ultraviolet instance",
+	"type": "module",
+	"scripts": {
+		"start": "node src/index.js"
+	},
+	"keywords": [
+		"proxy"
+	],
+	"author": "",
+	"license": "GPL-3.0-or-later",
+	"dependencies": {
+		"@tomphttp/bare-server-node": "^1.0.2-beta-readme2",
+		"serve-static": "^1.15.0"
+	},
+	"devDependencies": {
+		"eslint": "^8.23.0",
+		"prettier": "^2.7.1"
+	}
 }
