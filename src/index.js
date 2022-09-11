@@ -32,6 +32,20 @@ server.on("upgrade", (req, socket, head) => {
   }
 });
 
+let port = parseInt(process.env.PORT || "");
+
+if (isNaN(port)) port = 8080;
+
+server.on("listening", () => {
+  const address = server.address();
+
+  console.log(
+    `Listening on http://${
+      address.family === "IPv6" ? `[${address.address}]` : address.address
+    }:${address.port}`
+  );
+});
+
 server.listen({
-  port: process.env.PORT || 8080,
+  port,
 });
