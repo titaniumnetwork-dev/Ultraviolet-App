@@ -1,10 +1,14 @@
 import createServer from '@tomphttp/bare-server-node';
+import {fileURLToPath}  from 'url';
+import {dirname, join} from 'path';
 import http from 'http';
-import nodeStatic from 'node-static';
-
+import serveStatic from 'serve-static';
 
 const bare =  createServer('/bare/');
-const serve = new nodeStatic.Server('static/');
+const serve = serveStatic(join(
+	dirname(fileURLToPath(import.meta.url)),
+	'static/'
+), {fallthrough: false});
 
 const server = http.createServer();
 
@@ -12,7 +16,12 @@ server.on('request', (req, res) => {
     if (bare.shouldRoute(req)) {
 		bare.routeRequest(req, res);
 	} else {
-		serve.serve(req, res);
+		serve(req, res, err => {
+			res.writeHead(err?.statusCode || 500, null, {
+				"Content-Type": "text/plain"
+			})
+			res.end(err?.stack)
+		})
 	}
 });
 
