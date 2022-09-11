@@ -105,7 +105,10 @@ Finally, to start Ultraviolet, run the following command:
 $ npm start
 ```
 
-You can then find Ultraviolet on `http://127.0.0.1:8080`. If you would like to change the port UV will be running on, edit the last line in `index.mjs`.
+You can then find Ultraviolet on `http://127.0.0.1:8080`. If you would like to change the port UV will be running on:
+
+- edit the last line in [src/index.js](src/index.js)
+- set the `PORT` environment variable
 
 Please note that UV will not function without HTTPS. If you are hosting on Replit or Heroku, this won't be a problem as they provide you with SSL/TLS by default and will automatically apply it to your instance, however if you are attempting to host UV on a different platform, such as a personal server, you **WILL** need to use HTTPS.
 
