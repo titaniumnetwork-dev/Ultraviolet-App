@@ -1,12 +1,11 @@
 import createServer from "@tomphttp/bare-server-node";
 import { fileURLToPath } from "url";
-import { dirname, join } from "path";
 import http from "http";
 import serveStatic from "serve-static";
 
 const bare = createServer("/bare/");
 const serve = serveStatic(
-  join(dirname(fileURLToPath(import.meta.url)), "static/"),
+  fileURLToPath(new URL("../static/", import.meta.url)),
   { fallthrough: false }
 );
 
