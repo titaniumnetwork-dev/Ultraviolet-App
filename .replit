@@ -1,3 +1,13 @@
+language = "nix"
+run = ["npm", "start"]
+
+[packager]
+language = "nodejs-npm"
+
+[nix]
+channel = "stable-21_11"
+
+[debugger]
+
+[unitTest]
 language = "nodejs"
-run = "./main.sh"
-onBoot = "chmod u+x main.sh"
