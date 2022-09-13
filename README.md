@@ -66,13 +66,8 @@ To setup on Replit, first click on the "Run on Replit" button. After loading int
 
 ```sh
 $ npm install
-$ chmod +x main.sh
-$ ./main.sh
+$ npm start
 ```
-
-You will only have to run the second command once. It just allows `main.sh` to be executed. By running `main.sh`, you will update any submodules and will start the app.
-
-**Note**: If you choose not to use `main.sh`, but would rather just run all commands manually, please note that you will have to manually install submodules by running `git update submodules --init`. Without it, `static` will not be installed, and that is a required directory.
 
 ## Comprehensive Guide
 
@@ -81,10 +76,8 @@ Below will describe a comprehensive guide to install Ultraviolet on Linux machin
 To clone the repository, simply run the following command:
 
 ```sh
-$ git clone https://github.com/titaniumnetwork-development/Ultraviolet-Node --recursive
+$ git clone https://github.com/titaniumnetwork-development/Ultraviolet-Node
 ```
-
-The `--recursive` flag will clone the repository and all submodules.
 
 To begin work on the actual setup, cd into the repository. You can do so by running the following command:
 
@@ -92,7 +85,7 @@ To begin work on the actual setup, cd into the repository. You can do so by runn
 $ cd Ultraviolet-Node
 ```
 
-From here, you can update your submodules and install your dependencies. To do so, run the following command:
+From here, you can install your dependencies. To do so, run the following command:
 
 ```sh
 $ npm install
