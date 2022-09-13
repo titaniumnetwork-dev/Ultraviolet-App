@@ -1,6 +1,6 @@
-<p style="text-align: center"><img src="https://raw.githubusercontent.com/titaniumnetwork-development/Ultraviolet-Static/main/public/uv.png" height="200"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/titaniumnetwork-development/Ultraviolet-Static/main/public/uv.png" height="200"></p>
 
-<h1 style="text-align: center">Ultraviolet-Node</h1>
+<h1 align="center">Ultraviolet-Node</h1>
 
 The deployable version of Ultraviolet, a highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers and more!
 
