@@ -164,7 +164,7 @@ location / {
 
 # Main Scripts After Building
 
-The client-hooking & service worker scripts required for UV are located in [ultraviolet-scripts](https://github.com/titaniumnetwork-development/ultraviolet-scripts)
+The client-hooking & service worker scripts required for UV are located in [ultraviolet-scripts](https://github.com/titaniumnetwork-development/Ultraviolet-Core)
 
 - Scripts
   - `uv.sw.js` Service worker gateway
@@ -172,4 +172,3 @@ The client-hooking & service worker scripts required for UV are located in [ultr
   - `uv.bundle.js` Webpack compiled Ultraviolet rewriter
   - `uv.handler.js` Client-side hooking
   - `uv.config.js` Configuration
-sssss
