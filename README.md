@@ -54,7 +54,7 @@ Installation of Ultraviolet is simple. You can find a Tl;DR of the installation 
 ## Basic Guide
 
 ```sh
-$ git clone https://github.com/titaniumnetwork-development/Ultraviolet-Node --recursive
+$ git clone https://github.com/titaniumnetwork-development/Ultraviolet-Node
 $ cd Ultraviolet-Node
 $ npm install
 $ npm start
@@ -104,6 +104,10 @@ You can then find Ultraviolet on `http://127.0.0.1:8080`. If you would like to c
 
 Please note that UV will not function without HTTPS. If you are hosting on Replit or Heroku, this won't be a problem as they provide you with SSL/TLS by default and will automatically apply it to your instance, however if you are attempting to host UV on a different platform, such as a personal server, you **WILL** need to use HTTPS.
 
+## Static Files
+
+The static files (frontend) is generated in the Ultraviolet-Static repository. See [ultraviolet-static](https://github.com/titaniumnetwork-development/Ultraviolet-Static) for steps for packaging the static files and installing the frontend here.
+
 ## Configuration
 
 Configuring Ultraviolet is very simple. Simple descriptions of each configurable option are provided as a comment in the block below. More detailed documentation can be found just below mentioned block.
@@ -133,10 +137,6 @@ self.__uv$config = {
 | Bundle        | Bundle is the path to the UV bundle file. The default name and path to this file is `static/uv/uv.bundle.js`.                                                                                                                                                                                                           |
 | Config        | Config is the path to the UV config file. The default name and path to this file is `static/uv/uv.bundle.js`.                                                                                                                                                                                                           |
 | SW            | SW is the path to the UV Service Worker script. The default name and path to this file is `static/uv/uv.sw.js`.                                                                                                                                                                                                         |
-
-## Static Files
-
-Static files is the frontend for Ultraviolet. A standalone repository for it can be found [here](https://github.com/titaniumnetwork-development/Ultraviolet-Static).
 
 ## Nginx configuration
 
