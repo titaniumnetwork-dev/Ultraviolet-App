@@ -106,7 +106,8 @@ Please note that UV will not function without HTTPS. If you are hosting on Repli
 
 ## Static Files
 
-The static files (frontend) is generated in the Ultraviolet-Static repository. See [ultraviolet-static](https://github.com/titaniumnetwork-development/Ultraviolet-Static) for steps for packaging the static files and installing the frontend here.
+The static files (frontend) is generated in the [Ultraviolet-Static](https://github.com/titaniumnetwork-development/Ultraviolet-Static) repository. You can follow the instructions within the repository to modify the frontend here.
+
 
 ## Configuration
 
@@ -142,18 +143,18 @@ self.__uv$config = {
 
 ```nginx
 location / {
-	proxy_busy_buffers_size  512k;
-	proxy_buffers  4 512k;
-	proxy_buffer_size  256k;
- 	proxy_pass http://localhost:8080;
-	proxy_http_version 1.1;
-	proxy_set_header Upgrade $http_upgrade;
-	proxy_set_header Connection 'Upgrade';
-    	proxy_set_header X-Real-IP $remote_addr;
-    	proxy_set_header X-Forwarded-Host $host:$server_port;
-    	proxy_set_header X-Forwarded-Server $host;
-	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-	proxy_set_header Host $host;
+  proxy_busy_buffers_size  512k;
+  proxy_buffers  4 512k;
+  proxy_buffer_size  256k;
+  proxy_pass http://localhost:8080;
+  proxy_http_version 1.1;
+  proxy_set_header Upgrade $http_upgrade;
+  proxy_set_header Connection 'Upgrade';
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header X-Forwarded-Host $host:$server_port;
+  proxy_set_header X-Forwarded-Server $host;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header Host $host;
 }
 
 ```
