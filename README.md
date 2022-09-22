@@ -1,3 +1,20 @@
+<!--
+    Ultraviolet-Node Copyright (c) 2022 Titanium Network
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
+
 <p align="center"><img src="https://raw.githubusercontent.com/titaniumnetwork-development/Ultraviolet-Static/main/public/uv.png" height="200"></p>
 
 <h1 align="center">Ultraviolet-Node</h1>
@@ -71,7 +88,7 @@ $ npm start
 
 ## Comprehensive Guide
 
-Below will describe a comprehensive guide to install Ultraviolet on Linux machines.
+Below will describe a comprehensive guide to install Ultraviolet on your own machine.
 
 To clone the repository, simply run the following command:
 
