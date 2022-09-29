@@ -1,11 +1,11 @@
-import createServer from "@tomphttp/bare-server-node";
-import http from "http";
+import createBareServer from "@tomphttp/bare-server-node";
+import { createServer } from "node:http";
 import serveStatic from "serve-static";
 import { publicPath } from "ultraviolet-static";
 
-const bare = createServer("/bare/");
+const bare = createBareServer("/bare/");
 const serve = serveStatic(publicPath, { fallthrough: false });
-const server = http.createServer();
+const server = createServer();
 
 server.on("request", (req, res) => {
   if (bare.shouldRoute(req)) {
