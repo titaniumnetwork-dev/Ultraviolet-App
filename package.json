@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Ultraviolet instance",
   "type": "module",
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0"
+  },
   "scripts": {
     "start": "node src/index.js"
   },
