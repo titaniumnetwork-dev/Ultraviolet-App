@@ -2,21 +2,33 @@ import createBareServer from "@tomphttp/bare-server-node";
 import { createServer } from "node:http";
 import serveStatic from "serve-static";
 import { publicPath } from "ultraviolet-static";
+import { uvPath } from "ultraviolet";
 
 const bare = createBareServer("/bare/");
 const serve = serveStatic(publicPath, { fallthrough: false });
+const serveUV = serveStatic(uvPath, { fallthrough: false });
 const server = createServer();
 
 server.on("request", (req, res) => {
   if (bare.shouldRoute(req)) {
     bare.routeRequest(req, res);
   } else {
-    serve(req, res, (err) => {
-      res.writeHead(err?.statusCode || 500, null, {
-        "Content-Type": "text/plain",
+    if (req.url.startsWith("/uv/")) {
+      req.url = req.url.slice("/uv".length);
+      serveUV(req, res, (err) => {
+        res.writeHead(err?.statusCode || 500, null, {
+          "Content-Type": "text/plain",
+        });
+        res.end(err?.stack);
       });
-      res.end(err?.stack);
-    });
+    } else {
+      serve(req, res, (err) => {
+        res.writeHead(err?.statusCode || 500, null, {
+          "Content-Type": "text/plain",
+        });
+        res.end(err?.stack);
+      });
+    }
   }
 });
 
