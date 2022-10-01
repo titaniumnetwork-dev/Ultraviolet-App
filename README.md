@@ -2,7 +2,7 @@
 
 <h1 align="center">Ultraviolet-Node</h1>
 
-The deployable version of Ultraviolet, a highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers and more!
+The deployable all-in-one bundle for Ultraviolet, a highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers and more!
 
 ## Deployment
 
@@ -47,5 +47,5 @@ Additional information such as [customizing your frontend](https://github.com/ti
 ## Used by
 
 - [Incognito](https://github.com/caracal-js/Incognito), a popular web proxy service with focus on privacy
-- [Holy-Unblocker](https://git.holy.how/holy/website), a popular web proxy service focusing on bypassing web filters and more
+- [Holy Unblocker](https://git.holy.how/holy/website), a popular web proxy service focusing on bypassing web filters and more
 - [Hypertabs](titaniumnetwork.org/), a web proxy service using a PWA browser as its frontend
