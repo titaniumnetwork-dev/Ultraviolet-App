@@ -15,7 +15,7 @@ The deployable version of Ultraviolet, a highly sophisticated proxy used for eva
 
 If you are deploying to an alternative service or to a server, refer to [Deploy via terminal](https://github.com/titaniumnetwork-development/Ultraviolet-Node/wiki/Deploy-via-terminal).
 
-Additional information such as customizing your frontend can be found on the [wiki](https://github.com/titaniumnetwork-development/Ultraviolet-Node/wiki).
+Additional information such as [customizing your frontend](https://github.com/titaniumnetwork-development/Ultraviolet-Node/wiki/Customizing-your-frontend) can be found on the [wiki](https://github.com/titaniumnetwork-development/Ultraviolet-Node/wiki).
 
 ## Features
 
