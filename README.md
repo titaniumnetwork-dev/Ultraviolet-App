@@ -4,6 +4,15 @@
 
 The deployable version of Ultraviolet, a highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers and more!
 
+## Deployment
+
+[![Deploy to Heroku](https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg)](https://github.com/titaniumnetwork-development/Ultraviolet-Node/wiki/Deploy-to-Heroku)
+[![Run on Replit](https://binbashbanana.github.io/deploy-buttons/buttons/remade/replit.svg)](https://github.com/titaniumnetwork-development/Ultraviolet-Node/wiki/Run-on-Replit)
+[![Deploy on Railway](https://binbashbanana.github.io/deploy-buttons/buttons/remade/railway.svg)](https://github.com/titaniumnetwork-development/Ultraviolet-Node/wiki/Deploy-on-Railway)
+[![Remix on Glitch](https://binbashbanana.github.io/deploy-buttons/buttons/remade/glitch.svg)](https://github.com/titaniumnetwork-development/Ultraviolet-Node/wiki/Remix-on-Glitch)
+
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://github.com/titaniumnetwork-development/Ultraviolet-Node/wiki/Deploy-to-Koyeb)
+
 ## Features
 
 - CAPTCHA support along with hCAPTCHA support
@@ -107,7 +116,6 @@ Please note that UV will not function without HTTPS. If you are hosting on Repli
 ## Static Files
 
 The static files (frontend) is generated in the [Ultraviolet-Static](https://github.com/titaniumnetwork-development/Ultraviolet-Static) repository. You can follow the instructions within the repository to modify the frontend here.
-
 
 ## Configuration
 
