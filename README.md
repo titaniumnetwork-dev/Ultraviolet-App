@@ -10,8 +10,7 @@ The deployable all-in-one bundle for Ultraviolet, a highly sophisticated proxy u
 [![Run on Replit](https://binbashbanana.github.io/deploy-buttons/buttons/remade/replit.svg)](https://github.com/titaniumnetwork-development/Ultraviolet-Node/wiki/Run-on-Replit)
 [![Deploy on Railway](https://binbashbanana.github.io/deploy-buttons/buttons/remade/railway.svg)](https://github.com/titaniumnetwork-development/Ultraviolet-Node/wiki/Deploy-on-Railway)
 [![Remix on Glitch](https://binbashbanana.github.io/deploy-buttons/buttons/remade/glitch.svg)](https://github.com/titaniumnetwork-development/Ultraviolet-Node/wiki/Remix-on-Glitch)
-
-[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://github.com/titaniumnetwork-development/Ultraviolet-Node/wiki/Deploy-to-Koyeb)
+[![Deploy to Koyeb](https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg)](https://github.com/titaniumnetwork-development/Ultraviolet-Node/wiki/Deploy-to-Koyeb)
 
 If you are deploying to an alternative service or to a server, refer to [Deploy via terminal](https://github.com/titaniumnetwork-development/Ultraviolet-Node/wiki/Deploy-via-terminal).
 
