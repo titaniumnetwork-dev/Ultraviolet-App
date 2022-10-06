@@ -2,7 +2,7 @@ import createBareServer from "@tomphttp/bare-server-node";
 import { createServer } from "node:http";
 import serveStatic from "serve-static";
 import { publicPath } from "ultraviolet-static";
-import { uvPath } from "ultraviolet";
+import uvPath from "@titaniumnetwork-dev/ultraviolet";
 
 const bare = createBareServer("/bare/");
 const serve = serveStatic(publicPath, { fallthrough: false });
