@@ -1,6 +1,6 @@
 FROM node:current-slim
 
-WORKDIR /usr/app
+WORKDIR /app
 
 COPY ./ ./
 
