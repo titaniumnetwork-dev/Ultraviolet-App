@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY ./ ./
 
-RUN npm i
+RUN npm install --omit=dev
 
 ENTRYPOINT npm start
