@@ -16,10 +16,10 @@
   "author": "",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@titaniumnetwork-dev/ultraviolet": "file:../Ultraviolet",
+    "@titaniumnetwork-dev/ultraviolet": "^1.0.3",
     "@tomphttp/bare-server-node": "^1.0.4-deps1",
     "express": "^4.18.2",
-    "ultraviolet-static": "github:titaniumnetwork-development/ultraviolet-static"
+    "ultraviolet-static": "github:titaniumnetwork-development/Ultraviolet-Static"
   },
   "devDependencies": {
     "eslint": "^8.23.1",
