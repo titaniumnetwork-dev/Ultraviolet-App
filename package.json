@@ -19,7 +19,7 @@
     "@titaniumnetwork-dev/ultraviolet": "file:../Ultraviolet",
     "@tomphttp/bare-server-node": "^1.0.4-deps1",
     "express": "^4.18.2",
-    "ultraviolet-static": "github:titaniumnetwork-development/Ultraviolet-Static"
+    "ultraviolet-static": "github:titaniumnetwork-development/ultraviolet-static"
   },
   "devDependencies": {
     "eslint": "^8.23.1",
