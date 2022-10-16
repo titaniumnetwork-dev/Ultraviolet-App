@@ -2,7 +2,7 @@ import createBareServer from "@tomphttp/bare-server-node";
 import express from "express";
 import { createServer } from "node:http";
 import { publicPath } from "ultraviolet-static";
-import uvPath from "@titaniumnetwork-dev/ultraviolet";
+import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 
 const bare = createBareServer("/bare/");
 const app = express();
