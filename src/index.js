@@ -1,36 +1,21 @@
 import createBareServer from "@tomphttp/bare-server-node";
+import express from "express";
 import { createServer } from "node:http";
-import serveStatic from "serve-static";
 import { publicPath } from "ultraviolet-static";
 import uvPath from "@titaniumnetwork-dev/ultraviolet";
 
 const bare = createBareServer("/bare/");
-const serve = serveStatic(publicPath, { fallthrough: false });
-const serveUV = serveStatic(uvPath, { fallthrough: false });
+const app = express();
+
+// Load our publicPath first and prioritize it over UV.
+app.use(express.static(publicPath));
+// Load vendor files last.
+// The vendor's uv.config.js won't conflict with our uv.config.js inside the publicPath directory.
+app.use("/uv/", express.static(uvPath));
+
 const server = createServer();
 
-server.on("request", (req, res) => {
-  if (bare.shouldRoute(req)) {
-    bare.routeRequest(req, res);
-  } else {
-    if (req.url.startsWith("/uv/")) {
-      req.url = req.url.slice("/uv".length);
-      serveUV(req, res, (err) => {
-        res.writeHead(err?.statusCode || 500, null, {
-          "Content-Type": "text/plain",
-        });
-        res.end(err?.stack);
-      });
-    } else {
-      serve(req, res, (err) => {
-        res.writeHead(err?.statusCode || 500, null, {
-          "Content-Type": "text/plain",
-        });
-        res.end(err?.stack);
-      });
-    }
-  }
-});
+server.on("request", (req, res) => app(req, res));
 
 server.on("upgrade", (req, socket, head) => {
   if (bare.shouldRoute(req, socket, head)) {
