@@ -3,6 +3,7 @@ import express from "express";
 import { createServer } from "node:http";
 import { publicPath } from "ultraviolet-static";
 import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
+import { join } from "node:path";
 
 const bare = createBareServer("/bare/");
 const app = express();
@@ -12,6 +13,12 @@ app.use(express.static(publicPath));
 // Load vendor files last.
 // The vendor's uv.config.js won't conflict with our uv.config.js inside the publicPath directory.
 app.use("/uv/", express.static(uvPath));
+
+// Error for everything else
+app.use((req, res) => {
+  res.status(404);
+  res.sendFile(join(publicPath, "404.html"));
+});
 
 const server = createServer();
 
