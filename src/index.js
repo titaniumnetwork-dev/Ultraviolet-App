@@ -13,6 +13,11 @@ app.use(express.static(publicPath));
 // The vendor's uv.config.js won't conflict with our uv.config.js inside the publicPath directory.
 app.use("/uv/", express.static(uvPath));
 
+// Error for everything else
+app.use(function(req, res) {
+  res.status(404).sendFile(publicPath + "error.html");
+});
+
 const server = createServer();
 
 server.on("request", (req, res) => {
