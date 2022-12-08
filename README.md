@@ -15,36 +15,3 @@ The deployable all-in-one bundle for Ultraviolet, a highly sophisticated proxy u
 If you are deploying to an alternative service or to a server, refer to [Deploy via terminal](https://github.com/titaniumnetwork-dev/Ultraviolet-Node/wiki/Deploy-via-terminal).
 
 Additional information such as [customizing your frontend](https://github.com/titaniumnetwork-dev/Ultraviolet-Node/wiki/Customizing-your-frontend) can be found on the [wiki](https://github.com/titaniumnetwork-dev/Ultraviolet-Node/wiki).
-
-## Features
-
-- CAPTCHA support along with hCAPTCHA support
-- URL encoding settings to further hide activity when using Ultraviolet
-- Configuration all done on the client-side via service-workers
-- Speed in comparison to other web proxies that fully proxy content
-- Blacklist setting and more for easy hosting
-- Security in mind and leak prevention
-- Frequent updates to improve site support or fix security issues
-
-## Supported Sites
-
-- [Youtube](https://www.youtube.com)
-- [CAPTCHA/hCAPTCHA](https://www.captcha.net)
-- [Spotify](https://spotify.com)
-- [Discord](https://discord.com)
-- [Reddit](https://reddit.com)
-- [GeForce NOW](https://play.geforcenow.com/) (Partially Supported)
-- And more!
-
-## Technologies Used
-
-- Service Workers
-- HTML, JS, CSS rewriting
-- Parse5
-- Acorn.js
-
-## Used by
-
-- [Incognito](https://github.com/caracal-js/Incognito), a popular web proxy service with focus on privacy
-- [Holy Unblocker](https://git.holy.how/holy/website), a popular web proxy service focusing on bypassing web filters and more
-- [Hypertabs](titaniumnetwork.org/), a web proxy service using a PWA browser as its frontend
