@@ -1,9 +1,19 @@
-FROM node:current-slim
+# build app
+FROM docker.io/node:current-alpine3.15 AS builder
 
+RUN apk update
+RUN apk add git
+
+COPY . /app
 WORKDIR /app
 
-COPY ./package.json ./package-lock.json ./src/ ./
+RUN npm install
 
-RUN npm install --omit=dev
+# build final
+FROM gcr.io/distroless/nodejs:16
 
-ENTRYPOINT npm start
+EXPOSE 8080/tcp
+
+COPY --from=builder /app /
+
+CMD ["src/index.js"]
