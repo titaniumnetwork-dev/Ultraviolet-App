@@ -1,8 +1,8 @@
 # build app
-FROM docker.io/node:current-alpine3.15 AS builder
+FROM docker.io/node AS builder
 
-RUN apk update
-RUN apk add git
+RUN apt update
+RUN apt install git
 
 COPY . /app
 WORKDIR /app
