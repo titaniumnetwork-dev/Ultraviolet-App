@@ -5,7 +5,7 @@ run = ["npm", "start"]
 language = "nodejs-npm"
 
 [nix]
-channel = "stable-21_11"
+channel = "stable-23_01"
 
 [debugger]
 
