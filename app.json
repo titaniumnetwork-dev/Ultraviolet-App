@@ -1,7 +1,7 @@
 {
-  "name": "Ultraviolet App",
-  "description": "Node.js Ultraviolet instance",
-  "repository": "https://github.com/titaniumnetwork-dev/Ultraviolet-App",
+  "name": "ultramode",
+  "description": "Node.js Ultramode instance",
+  "repository": "https://github.com/aphot2004/unknown-condition",
   "logo": "https://raw.githubusercontent.com/titaniumnetwork-dev/Ultraviolet-Static/main/public/uv.png",
-  "keywords": ["tomp", "ultraviolet"]
+  "keywords": ["stomponu", "ultramode"]
 }
