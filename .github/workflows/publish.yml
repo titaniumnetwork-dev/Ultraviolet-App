@@ -1,0 +1,17 @@
+
+name: publish
+
+on: [push]
+
+jobs:
+  publish-proxy-image:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build the hello-world Docker image
+      run: |
+        echo $CR_PAT | docker login ghcr.io -u IncognitoTGT --password-stdin
+      env:
+        CR_PAT: ${{ secrets.CR_PAT }}
