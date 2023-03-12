@@ -1,19 +1,10 @@
-# build app
-FROM docker.io/node AS builder
-
-RUN apt update
-RUN apt install git
-
-COPY . /app
-WORKDIR /app
-
+# initing
+FROM node:19-alpine3.16
+WORKDIR .
+COPY . .
+# setting up
 RUN npm install
-
-# build final
-FROM gcr.io/distroless/nodejs:16
-
+# Time to profit?
 EXPOSE 8080/tcp
+CMD ["PORT=8080","npm", "start"]
 
-COPY --from=builder /app /
-
-CMD ["src/index.js"]
