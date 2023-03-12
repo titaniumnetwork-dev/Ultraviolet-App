@@ -1,5 +1,4 @@
 # initing
-LABEL org.opencontainers.image.source="https://github.com/incognitotgt/ultraviolet"
 FROM node:19-alpine3.16
 WORKDIR .
 COPY . .
