@@ -1,0 +1,9 @@
+services:
+  ultraviolet:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        - NPM_BUILD=npm ci --omit=dev --frozen-lockfile
+    ports:
+      - "8080:8080"
