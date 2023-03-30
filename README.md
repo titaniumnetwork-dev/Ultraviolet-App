@@ -15,3 +15,5 @@ The deployable all-in-one bundle for [Ultraviolet](https://github.com/titaniumne
 If you are deploying to an alternative service or to a server, refer to [Deploy via terminal](https://github.com/titaniumnetwork-dev/Ultraviolet-App/wiki/Deploy-via-terminal).
 
 Additional information such as [customizing your frontend](https://github.com/titaniumnetwork-dev/Ultraviolet-App/wiki/Customizing-your-frontend) can be found on the [wiki](https://github.com/titaniumnetwork-dev/Ultraviolet-App/wiki).
+
+Support and updates can be found in our [Discord Server](discord.gg/unblock).
