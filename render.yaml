@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: Ultraviolet
+    env: docker
+    repo: https://github.com/titaniumnetwork-dev/Ultraviolet-App.git
+    region: oregon
+    plan: free
+    branch: main
+    numInstances: 1
+    healthCheckPath: /
