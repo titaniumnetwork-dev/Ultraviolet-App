@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: UV
+    env: docker
+    repo: https://github.com/NashC101/Ultraviolet-App.git
+    region: oregon
+    plan: free
+    branch: main
+    numInstances: 1
+    healthCheckPath: /
