@@ -1,0 +1,3 @@
+[submodule "Ultraviolet-Static"]
+	path = Ultraviolet-Static
+	url = https://github.com/agaudana/Ultraviolet-Static.git
