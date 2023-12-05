@@ -1,5 +1,7 @@
 FROM node:18-alpine
 
+RUN apk add --no-cache curl
+
 ENV NODE_ENV=production
 ARG NPM_BUILD="npm install --omit=dev"
 EXPOSE 8080/tcp
