@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@mercuryworkshop/bare-mux':
-    specifier: ^1.0.3
-    version: 1.0.3
+    specifier: ^1.0.4
+    version: 1.0.4
   '@mercuryworkshop/epoxy-transport':
     specifier: ^1.0.2
     version: 1.0.2(typescript@5.3.3)
@@ -18,8 +18,8 @@ dependencies:
     specifier: ^4.18.2
     version: 4.18.2
   ultraviolet-static:
-    specifier: link:../Ultraviolet-Static/
-    version: link:../Ultraviolet-Static
+    specifier: github:titaniumnetwork-dev/Ultraviolet-Static
+    version: github.com/titaniumnetwork-dev/Ultraviolet-Static/8aa210c290263c0103fd4c005707ca209a4a056a(@titaniumnetwork-dev/ultraviolet@3.0.0)
   wisp-server-node:
     specifier: ^1.0.1
     version: 1.0.1
@@ -325,8 +325,8 @@ packages:
       uuid: 9.0.1
     dev: false
 
-  /@mercuryworkshop/bare-mux@1.0.3:
-    resolution: {integrity: sha512-UM9XO+o95ey2az13LLltEt3q8JUf0DNcDr7QN0rfhniKywKvct+1m28om6GZVIlmDaYVp2o3N7NNg9KYytvFmQ==}
+  /@mercuryworkshop/bare-mux@1.0.4:
+    resolution: {integrity: sha512-u9vtjc9Gp4G6UO7NYB1SphEiNIZtHuwI7/wxebbeKJ+GegmogxFodXF0ZYsQl7AY0fo3RqQs4odex9pYPHDkgQ==}
     dependencies:
       '@types/uuid': 9.0.8
       uuid: 9.0.1
@@ -2015,3 +2015,14 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  github.com/titaniumnetwork-dev/Ultraviolet-Static/8aa210c290263c0103fd4c005707ca209a4a056a(@titaniumnetwork-dev/ultraviolet@3.0.0):
+    resolution: {tarball: https://codeload.github.com/titaniumnetwork-dev/Ultraviolet-Static/tar.gz/8aa210c290263c0103fd4c005707ca209a4a056a}
+    id: github.com/titaniumnetwork-dev/Ultraviolet-Static/8aa210c290263c0103fd4c005707ca209a4a056a
+    name: ultraviolet-static
+    version: 1.0.2
+    peerDependencies:
+      '@titaniumnetwork-dev/ultraviolet': ^2.0.0
+    dependencies:
+      '@titaniumnetwork-dev/ultraviolet': 3.0.0
+    dev: false
