@@ -16,3 +16,12 @@ If you are deploying to an alternative service or to a server, refer to [Deploy 
 Additional information such as [customizing your frontend](https://github.com/titaniumnetwork-dev/Ultraviolet-App/wiki/Customizing-your-frontend) can be found on the [wiki](https://github.com/titaniumnetwork-dev/Ultraviolet-App/wiki).
 
 Support and updates can be found in our [Discord Server](discord.gg/unblock).
+
+### HTTP Transport
+The example uses [EpoxyTransport](https://github.com/MercuryWorkshop/EpoxyTransport) to fetch proxied data encrypted. 
+
+You may also want to use [CurlTransport](https://github.com/MercuryWorkshop/CurlTranspor), a different way of fetching encrypted data, or [Bare-Client](https://github.com/MercuryWorkshop/Bare-as-module3), the legacy (unencrypted!) transport.
+
+In public/register-sw.js, look for the line `BareMux.SetTransport("EpxMod.EpoxyClient", { wisp: "ws://localhost:8080/wisp" });`, which can be changed to any of the transports. Make sure to `importScripts` the transport's bundle in `public/uv/sw.js` and add a script tag in both `public/404.html` and `public/index.html`. 
+
+See the [bare-mux](https://github.com/MercuryWorkshop/bare-mux) documentation for more information
