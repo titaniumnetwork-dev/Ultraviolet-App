@@ -17,6 +17,9 @@ Additional information such as [customizing your frontend](https://github.com/ti
 
 Support and updates can be found in our [Discord Server](discord.gg/unblock).
 
+> [!IMPORTANT]  
+> Until deployed on a domain with a valid SSL certificate, Firefox will not be able to load the site. Use chromium for testing on localhost
+
 ### HTTP Transport
 The example uses [EpoxyTransport](https://github.com/MercuryWorkshop/EpoxyTransport) to fetch proxied data encrypted. 
 
