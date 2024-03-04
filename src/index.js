@@ -3,17 +3,20 @@ import express from "express";
 import { createServer } from "node:http";
 import { publicPath } from "ultraviolet-static";
 import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
+import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
+import { baremuxPath } from "@mercuryworkshop/bare-mux";
 import { join } from "node:path";
 import { hostname } from "node:os";
+import wisp from "wisp-server-node"
 
-const bare = createBareServer("/bare/");
 const app = express();
-
 // Load our publicPath first and prioritize it over UV.
 app.use(express.static(publicPath));
 // Load vendor files last.
 // The vendor's uv.config.js won't conflict with our uv.config.js inside the publicPath directory.
 app.use("/uv/", express.static(uvPath));
+app.use("/epoxy/", express.static(epoxyPath));
+app.use("/baremux/", express.static(baremuxPath));
 
 // Error for everything else
 app.use((req, res) => {
@@ -24,19 +27,13 @@ app.use((req, res) => {
 const server = createServer();
 
 server.on("request", (req, res) => {
-  if (bare.shouldRoute(req)) {
-    bare.routeRequest(req, res);
-  } else {
-    app(req, res);
-  }
+  app(req, res);
 });
-
 server.on("upgrade", (req, socket, head) => {
-  if (bare.shouldRoute(req)) {
-    bare.routeUpgrade(req, socket, head);
-  } else {
+  if (req.url.endsWith("/wisp"))
+    wisp.routeRequest(req, socket, head);
+  else
     socket.end();
-  }
 });
 
 let port = parseInt(process.env.PORT || "");
@@ -52,8 +49,7 @@ server.on("listening", () => {
   console.log(`\thttp://localhost:${address.port}`);
   console.log(`\thttp://${hostname()}:${address.port}`);
   console.log(
-    `\thttp://${
-      address.family === "IPv6" ? `[${address.address}]` : address.address
+    `\thttp://${address.family === "IPv6" ? `[${address.address}]` : address.address
     }:${address.port}`
   );
 });
@@ -65,7 +61,6 @@ process.on("SIGTERM", shutdown);
 function shutdown() {
   console.log("SIGTERM signal received: closing HTTP server");
   server.close();
-  bare.close();
   process.exit(0);
 }
 
