@@ -16,12 +16,12 @@
   "author": "",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@mercuryworkshop/bare-mux": "^1.0.5",
+    "@mercuryworkshop/bare-mux": "^1.0.7",
     "@mercuryworkshop/epoxy-transport": "^1.1.0",
-    "@titaniumnetwork-dev/ultraviolet": "^3.0.0",
+    "@titaniumnetwork-dev/ultraviolet": "^3.0.2",
     "express": "^4.18.2",
     "ultraviolet-static": "github:titaniumnetwork-dev/Ultraviolet-Static",
-    "wisp-server-node": "^1.0.1",
+    "wisp-server-node": "^1.0.4",
     "ws": "^8.16.0"
   },
   "devDependencies": {
