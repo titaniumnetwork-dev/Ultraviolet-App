@@ -1,7 +1,7 @@
 {
-  "name": "uv-app",
+  "name": "Eclipseinf",
   "version": "1.0.0",
-  "description": "Ultraviolet instance",
+  "description": "Eclipse∞ instance",
   "type": "module",
   "engines": {
     "npm": ">=7.0.0",
@@ -20,7 +20,7 @@
     "@mercuryworkshop/epoxy-transport": "^1.1.0",
     "@titaniumnetwork-dev/ultraviolet": "^3.1.2",
     "express": "^4.18.2",
-    "ultraviolet-static": "github:titaniumnetwork-dev/Ultraviolet-Static",
+    "Eclipseinf": "github:Eclipseinf/Eclipseinf",
     "wisp-server-node": "^1.0.6",
     "ws": "^8.16.0"
   },
