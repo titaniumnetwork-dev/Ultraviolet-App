@@ -7,7 +7,7 @@ import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
 import { join } from "node:path";
 import { hostname } from "node:os";
 import wisp from "wisp-server-node"
-
+import compression from "compression";
 const app = express();
 // Load our publicPath first and prioritize it over UV.
 app.use(express.static(publicPath));
@@ -16,6 +16,8 @@ app.use(express.static(publicPath));
 app.use("/uv/", express.static(uvPath));
 app.use("/epoxy/", express.static(epoxyPath));
 app.use("/baremux/", express.static(baremuxPath));
+// Compress using zlib
+app.use(compression({level:6}))
 
 // Error for everything else
 app.use((req, res) => {
