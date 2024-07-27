@@ -1,9 +1,11 @@
 services:
   ultraviolet:
-    build:
-      context: .
-      dockerfile: docker/Dockerfile
-      args:
-        - NPM_BUILD=npm ci --omit=dev --frozen-lockfile
+    image: diffusehyperion/ultraviolet
+    container_name: ultraviolet
+    restart: unless-stopped
     ports:
       - "8080:8080"
+    
+networks:
+  default:
+    name: ultraviolet
