@@ -3,8 +3,6 @@ name: Build and Push to Docker Hub
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
   schedule:
     - cron: "30 12 * * 0" # Run once every Sunday
 
