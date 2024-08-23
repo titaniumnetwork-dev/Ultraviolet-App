@@ -2,7 +2,7 @@
 日本向けに軽量化して作ったWEBProxyです。
 ## ~ 導入方法&起動方法 ~
 
-```sudo curl -Ls https://raw.githubusercontent.com/uu5007mp/BBS-Proxy/main/set_pm2.sh -o set.sh```
+```sudo curl -Ls https://raw.githubusercontent.com/hirotomoki12345/BBS-Proxy/main/set_pm2.sh -o set.sh```
 ```bash ./set.sh```
 
 logの様子を見るには 
@@ -14,7 +14,7 @@ logの様子を見るには
 ## 止めるには
 ```pm2 stop bbs-proxy```
 ## 削除するには
-```sudo curl -Ls https://raw.githubusercontent.com/uu5007mp/BBS-Proxy/main/delete.sh | sudo bash```
+```sudo curl -Ls https://raw.githubusercontent.com/hirotomoki12345/BBS-Proxy/main/delete.sh | sudo bash```
 ## 注意
 ~~debian linuxじゃないとできないです。(apt入れたらできるかも(試していません))~~
 
