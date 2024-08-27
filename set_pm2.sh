@@ -95,6 +95,8 @@ install_and_start() {
     fi
 
     pm2 save
+    sudo pm2 startup
+    sudo pm2 save
 
     echo "BBS-Proxy application started successfully with PM2"
 }
