@@ -28,4 +28,5 @@
     "eslint": "^8.36.0",
     "prettier": "^2.8.4"
   }
+  "packageManager": "pnpm@9.5.0"
 }
