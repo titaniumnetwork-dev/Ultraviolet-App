@@ -1,7 +1,7 @@
 import { createServer } from "node:http";
 import { join } from "node:path";
 import { hostname } from "node:os";
-import wisp from "wisp-server-node"
+import wisp from "wisp-server-node";
 import Fastify from "fastify";
 import fastifyStatic from "@fastify/static";
 
@@ -20,10 +20,8 @@ const fastify = Fastify({
 				handler(req, res);
 			})
 			.on("upgrade", (req, socket, head) => {
-        if (req.url.endsWith("/wisp/"))
-          wisp.routeRequest(req, socket, head);
-        else
-          socket.end();
+				if (req.url.endsWith("/wisp/")) wisp.routeRequest(req, socket, head);
+				else socket.end();
 			});
 	},
 });
@@ -33,49 +31,50 @@ fastify.register(fastifyStatic, {
 	decorateReply: true,
 });
 
-fastify.get('/uv/uv.config.js', (req, res) => {
-  return res.sendFile('uv/uv.config.js', publicPath);
+fastify.get("/uv/uv.config.js", (req, res) => {
+	return res.sendFile("uv/uv.config.js", publicPath);
 });
 
 fastify.register(fastifyStatic, {
 	root: uvPath,
-  prefix: "/uv/",
+	prefix: "/uv/",
 	decorateReply: false,
 });
 
 fastify.register(fastifyStatic, {
 	root: epoxyPath,
-  prefix: "/epoxy/",
+	prefix: "/epoxy/",
 	decorateReply: false,
 });
 
 fastify.register(fastifyStatic, {
 	root: baremuxPath,
-  prefix: "/baremux/",
+	prefix: "/baremux/",
 	decorateReply: false,
 });
 
 fastify.server.on("listening", () => {
-  const address = fastify.server.address();
+	const address = fastify.server.address();
 
-  // by default we are listening on 0.0.0.0 (every interface)
-  // we just need to list a few
-  console.log("Listening on:");
-  console.log(`\thttp://localhost:${address.port}`);
-  console.log(`\thttp://${hostname()}:${address.port}`);
-  console.log(
-    `\thttp://${address.family === "IPv6" ? `[${address.address}]` : address.address
-    }:${address.port}`
-  );
+	// by default we are listening on 0.0.0.0 (every interface)
+	// we just need to list a few
+	console.log("Listening on:");
+	console.log(`\thttp://localhost:${address.port}`);
+	console.log(`\thttp://${hostname()}:${address.port}`);
+	console.log(
+		`\thttp://${
+			address.family === "IPv6" ? `[${address.address}]` : address.address
+		}:${address.port}`
+	);
 });
 
 process.on("SIGINT", shutdown);
 process.on("SIGTERM", shutdown);
 
 function shutdown() {
-  console.log("SIGTERM signal received: closing HTTP server");
-  fastify.close();
-  process.exit(0);
+	console.log("SIGTERM signal received: closing HTTP server");
+	fastify.close();
+	process.exit(0);
 }
 
 let port = parseInt(process.env.PORT || "");

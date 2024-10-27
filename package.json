@@ -1,33 +1,36 @@
 {
-  "name": "uv-app",
-  "version": "1.0.0",
-  "description": "Ultraviolet instance",
-  "type": "module",
-  "engines": {
-    "npm": ">=7.0.0",
-    "node": ">=16.0.0"
-  },
-  "scripts": {
-    "start": "node src/index.js"
-  },
-  "keywords": [
-    "proxy"
-  ],
-  "author": "",
-  "license": "GPL-3.0-or-later",
-  "dependencies": {
-    "@fastify/static": "^8.0.2",
-    "@mercuryworkshop/bare-mux": "^2.1.6",
-    "@mercuryworkshop/epoxy-transport": "^2.1.25",
-    "@titaniumnetwork-dev/ultraviolet": "^3.2.9",
-    "fastify": "^5.0.0",
-    "ultraviolet-static": "github:titaniumnetwork-dev/Ultraviolet-Static",
-    "wisp-server-node": "^1.1.7",
-    "ws": "^8.18.0"
-  },
-  "devDependencies": {
-    "eslint": "^9.13.0",
-    "prettier": "^3.3.3"
-  },
-  "packageManager": "pnpm@9.12.2"
+	"name": "uv-app",
+	"version": "1.0.0",
+	"description": "Ultraviolet instance",
+	"type": "module",
+	"engines": {
+		"npm": ">=7.0.0",
+		"node": ">=16.0.0"
+	},
+	"scripts": {
+		"start": "node src/index.js",
+		"format": "prettier --config .prettierrc.js --write .",
+		"lint": "eslint ./src/",
+		"lint:fix": "eslint ./src/ --fix"
+	},
+	"keywords": [
+		"proxy"
+	],
+	"author": "",
+	"license": "GPL-3.0-or-later",
+	"dependencies": {
+		"@fastify/static": "^8.0.2",
+		"@mercuryworkshop/bare-mux": "^2.1.6",
+		"@mercuryworkshop/epoxy-transport": "^2.1.25",
+		"@titaniumnetwork-dev/ultraviolet": "^3.2.10",
+		"fastify": "^5.0.0",
+		"ultraviolet-static": "github:titaniumnetwork-dev/Ultraviolet-Static",
+		"wisp-server-node": "^1.1.7",
+		"ws": "^8.18.0"
+	},
+	"devDependencies": {
+		"eslint": "^9.13.0",
+		"prettier": "^3.3.3"
+	},
+	"packageManager": "pnpm@9.12.2"
 }
