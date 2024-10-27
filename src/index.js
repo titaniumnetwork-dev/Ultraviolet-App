@@ -1,48 +1,62 @@
-import express from "express";
 import { createServer } from "node:http";
+import { join } from "node:path";
+import { hostname } from "node:os";
+import wisp from "wisp-server-node"
+import Fastify from "fastify";
+import fastifyStatic from "@fastify/static";
+
+// static paths
 import { publicPath } from "ultraviolet-static";
 import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
-import { join } from "node:path";
-import { hostname } from "node:os";
-import wisp from "wisp-server-node"
 
-const app = express();
-// Load our publicPath first and prioritize it over UV.
-app.use(express.static(publicPath));
-// Load vendor files last.
-// The vendor's uv.config.js won't conflict with our uv.config.js inside the publicPath directory.
-app.use("/uv/", express.static(uvPath));
-app.use("/epoxy/", express.static(epoxyPath));
-app.use("/baremux/", express.static(baremuxPath));
-
-// Error for everything else
-app.use((req, res) => {
-  res.status(404);
-  res.sendFile(join(publicPath, "404.html"));
+const fastify = Fastify({
+	serverFactory: (handler) => {
+		return createServer()
+			.on("request", (req, res) => {
+				res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+				res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
+				handler(req, res);
+			})
+			.on("upgrade", (req, socket, head) => {
+        if (req.url.endsWith("/wisp/"))
+          wisp.routeRequest(req, socket, head);
+        else
+          socket.end();
+			});
+	},
 });
 
-const server = createServer();
-
-server.on("request", (req, res) => {
-  res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
-  res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
-  app(req, res);
-});
-server.on("upgrade", (req, socket, head) => {
-  if (req.url.endsWith("/wisp/"))
-    wisp.routeRequest(req, socket, head);
-  else
-    socket.end();
+fastify.register(fastifyStatic, {
+	root: publicPath,
+	decorateReply: true,
 });
 
-let port = parseInt(process.env.PORT || "");
+fastify.get('/uv/uv.config.js', (req, res) => {
+  return res.sendFile('uv/uv.config.js', publicPath);
+});
 
-if (isNaN(port)) port = 8080;
+fastify.register(fastifyStatic, {
+	root: uvPath,
+  prefix: "/uv/",
+	decorateReply: false,
+});
 
-server.on("listening", () => {
-  const address = server.address();
+fastify.register(fastifyStatic, {
+	root: epoxyPath,
+  prefix: "/epoxy/",
+	decorateReply: false,
+});
+
+fastify.register(fastifyStatic, {
+	root: baremuxPath,
+  prefix: "/baremux/",
+	decorateReply: false,
+});
+
+fastify.server.on("listening", () => {
+  const address = fastify.server.address();
 
   // by default we are listening on 0.0.0.0 (every interface)
   // we just need to list a few
@@ -55,16 +69,20 @@ server.on("listening", () => {
   );
 });
 
-// https://expressjs.com/en/advanced/healthcheck-graceful-shutdown.html
 process.on("SIGINT", shutdown);
 process.on("SIGTERM", shutdown);
 
 function shutdown() {
   console.log("SIGTERM signal received: closing HTTP server");
-  server.close();
+  fastify.close();
   process.exit(0);
 }
 
-server.listen({
-  port,
+let port = parseInt(process.env.PORT || "");
+
+if (isNaN(port)) port = 8080;
+
+fastify.listen({
+	port: port,
+	host: "0.0.0.0",
 });
