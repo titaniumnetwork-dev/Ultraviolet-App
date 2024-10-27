@@ -18,8 +18,8 @@ importers:
         specifier: ^2.1.25
         version: 2.1.25
       '@titaniumnetwork-dev/ultraviolet':
-        specifier: ^3.2.8
-        version: 3.2.8
+        specifier: ^3.2.9
+        version: 3.2.9
       fastify:
         specifier: ^5.0.0
         version: 5.0.0
@@ -130,8 +130,8 @@ packages:
   '@mercuryworkshop/epoxy-transport@2.1.25':
     resolution: {integrity: sha512-vPlHDDG/h2K6WgwV/zKEdxauSCn/KfRHrJGHHK41zJw+oysoZPSTXU666Hf6SHVBv6L3zXpWmXeIuGJUUGJ9Fg==}
 
-  '@titaniumnetwork-dev/ultraviolet@3.2.8':
-    resolution: {integrity: sha512-ZNJfZvl8+6Vde/91sdibTQpE7c5FzLMsBZCtRJfl1jJZUm9kCyLs7p5KPdaUkVe9ezUqxJb4/MP73T+vBiAjPg==}
+  '@titaniumnetwork-dev/ultraviolet@3.2.9':
+    resolution: {integrity: sha512-k2hvTe/SxnNRYz0M/stoVtLDK9YBlvOA1tzDZMASsyIjZVSIBD9wCBBiG4M+ZR3NxO/rWO5moXhADMaTputoug==}
 
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
@@ -853,7 +853,7 @@ snapshots:
     dependencies:
       '@mercuryworkshop/epoxy-tls': 2.1.14-1
 
-  '@titaniumnetwork-dev/ultraviolet@3.2.8':
+  '@titaniumnetwork-dev/ultraviolet@3.2.9':
     dependencies:
       '@mercuryworkshop/bare-mux': 2.1.6
       astring: 1.9.0
