@@ -6,7 +6,7 @@ import Fastify from "fastify";
 import fastifyStatic from "@fastify/static";
 
 // static paths
-import { publicPath } from "ultraviolet-static";
+import { publicPath } from "ultrovio-static";
 import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
@@ -79,7 +79,7 @@ function shutdown() {
 
 let port = parseInt(process.env.PORT || "");
 
-if (isNaN(port)) port = 8080;
+if (isNaN(port)) port = 5000;
 
 fastify.listen({
 	port: port,
