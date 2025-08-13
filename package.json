@@ -23,6 +23,7 @@
 		"@mercuryworkshop/bare-mux": "^2.1.6",
 		"@mercuryworkshop/epoxy-transport": "^2.1.25",
 		"@titaniumnetwork-dev/ultraviolet": "^3.2.10",
+		"dotenv": "^17.2.1",
 		"fastify": "^5.0.0",
 		"ultraviolet-static": "github:titaniumnetwork-dev/Ultraviolet-Static",
 		"wisp-server-node": "^1.1.7",
