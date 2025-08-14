@@ -42,6 +42,19 @@ fastify.register(fastifyCors, {
   hook: "preHandler",
 });
 
+// Ensure CORS and isolation headers are present on all responses (including static)
+fastify.addHook("onSend", (req, reply, payload, done) => {
+  const requestOrigin = req.headers.origin || "*";
+  if (!reply.getHeader("Access-Control-Allow-Origin")) {
+    reply.header("Access-Control-Allow-Origin", requestOrigin);
+    reply.header("Vary", "Origin");
+  }
+  if (!reply.getHeader("Cross-Origin-Resource-Policy")) {
+    reply.header("Cross-Origin-Resource-Policy", "same-origin");
+  }
+  done();
+});
+
 fastify.register(fastifyStatic, {
 	root: publicPath,
 	decorateReply: true,
