@@ -4,10 +4,7 @@ import { hostname } from "node:os";
 import wisp from "wisp-server-node";
 import Fastify from "fastify";
 import fastifyStatic from "@fastify/static";
-import fastifyCors from "@fastify/cors";
 
-// static paths
-import { publicPath } from "ultraviolet-static";
 import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
@@ -21,47 +18,10 @@ const fastify = Fastify({
 				handler(req, res);
 			})
 			.on("upgrade", (req, socket, head) => {
-				if ((req.url || "").startsWith("/wisp")) wisp.routeRequest(req, socket, head);
+				if (req.url.endsWith("/wisp/")) wisp.routeRequest(req, socket, head);
 				else socket.end();
 			});
 	},
-});
-
-// Allow all origins/methods/headers for CORS
-fastify.register(fastifyCors, {
-  origin: (origin, cb) => {
-    cb(null, true);
-  },
-  methods: ["GET", "POST", "OPTIONS"],
-  allowedHeaders: ["*"],
-  exposedHeaders: ["*"],
-  credentials: false,
-  maxAge: 86400,
-  preflight: true,
-  strictPreflight: false,
-  hook: "preHandler",
-});
-
-// Ensure CORS and isolation headers are present on all responses (including static)
-fastify.addHook("onSend", (req, reply, payload, done) => {
-  const requestOrigin = req.headers.origin || "*";
-  if (!reply.getHeader("Access-Control-Allow-Origin")) {
-    reply.header("Access-Control-Allow-Origin", requestOrigin);
-    reply.header("Vary", "Origin");
-  }
-  if (!reply.getHeader("Cross-Origin-Resource-Policy")) {
-    reply.header("Cross-Origin-Resource-Policy", "same-origin");
-  }
-  done();
-});
-
-fastify.register(fastifyStatic, {
-	root: publicPath,
-	decorateReply: true,
-});
-
-fastify.get("/uv/uv.config.js", (req, res) => {
-	return res.sendFile("uv/uv.config.js", publicPath);
 });
 
 fastify.register(fastifyStatic, {
