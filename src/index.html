@@ -26,7 +26,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@mercuryworkshop/bare-mux@latest/dist/index.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@mercuryworkshop/epoxy-tls@latest/client/index.js" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/titaniumnetwork-dev/Ultraviolet-Static@main/public/uv/uv.bundle.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/gh/titaniumnetwork-dev/Ultraviolet-Static@main/public/uv/uv.config.js" defer></script>
+    <script>
+      await navigator.serviceWorker.register(fetch());
+    </script>
     <script src="https://cdn.jsdelivr.net/gh/titaniumnetwork-dev/Ultraviolet-Static@main/public/register-sw.js" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/titaniumnetwork-dev/Ultraviolet-Static@main/public/search.js" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/titaniumnetwork-dev/Ultraviolet-Static@main/public/index.js" defer></script>
