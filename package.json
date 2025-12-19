@@ -6,13 +6,17 @@
 	"engines": {
 		"npm": ">=7.0.0",
 		"node": ">=16.0.0"
+	
 	},
-	"scripts": {
-		"start": "node src/index.js",
-		"format": "prettier --config .prettierrc.js --write .",
-		"lint": "eslint ./src/",
-		"lint:fix": "eslint ./src/ --fix"
-	},
+"scripts": {
+  "start": "node src/index.js",
+  "dev": "node src/index.js",
+  "format": "prettier --config .prettierrc.js --write .",
+  "lint": "eslint ./src/",
+  "lint:fix": "eslint ./src/ --fix"
+}
+
+
 	"keywords": [
 		"proxy"
 	],
