@@ -10,7 +10,7 @@ LABEL description="Example application of Ultraviolet which can be deployed in p
 
 WORKDIR /app
 
-COPY ["package.json", "package-lock.json", "./"]
+COPY ["package.json", "pnpm-lock.yaml", "./"]
 RUN apk add --upgrade --no-cache python3 make g++
 RUN $NPM_BUILD
 
