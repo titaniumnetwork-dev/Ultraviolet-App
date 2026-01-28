@@ -24,7 +24,7 @@
 	},
 	"dependencies": {
 		"@mercuryworkshop/bare-mux": "^2.1.8",
-		"@mercuryworkshop/libcurl-transport": "^1.5.2",
+		"@mercuryworkshop/epoxy-transport": "2.1.28",
 		"@titaniumnetwork-dev/ultraviolet": "^3.2.10",
 		"express": "^5.2.1",
 		"wisp-server-node": "1.1.7",

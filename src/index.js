@@ -5,7 +5,7 @@ import express from "express";
 import wisp from "wisp-server-node";
 
 import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
-import { libcurlPath } from "@mercuryworkshop/libcurl-transport";
+import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
 
 const app = express();
@@ -14,7 +14,7 @@ app.use(express.static("./public"));
 // Load vendor files last.
 // The vendor's uv.config.js won't conflict with our uv.config.js inside the publicPath directory.
 app.use("/uv/", express.static(uvPath));
-app.use("/libcurl/", express.static(libcurlPath));
+app.use("/epoxy/", express.static(epoxyPath));
 app.use("/baremux/", express.static(baremuxPath));
 
 // Error for everything else
