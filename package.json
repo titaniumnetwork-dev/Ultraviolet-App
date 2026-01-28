@@ -4,33 +4,30 @@
 	"description": "Ultraviolet instance",
 	"type": "module",
 	"engines": {
-		"npm": ">=7.0.0",
-		"node": ">=16.0.0"
+		"node": ">=24.0.0"
 	},
 	"scripts": {
 		"start": "node src/index.js",
-		"format": "prettier --config .prettierrc.js --write .",
+		"format": "prettier --write .",
 		"lint": "eslint ./src/",
 		"lint:fix": "eslint ./src/ --fix"
 	},
 	"keywords": [
 		"proxy"
 	],
+	"packageManager": "pnpm@10.28.0",
 	"author": "",
 	"license": "GPL-3.0-or-later",
-	"dependencies": {
-		"@fastify/static": "^8.0.2",
-		"@mercuryworkshop/bare-mux": "^2.1.6",
-		"@mercuryworkshop/epoxy-transport": "^2.1.25",
-		"@titaniumnetwork-dev/ultraviolet": "^3.2.10",
-		"fastify": "^5.0.0",
-		"ultraviolet-static": "github:titaniumnetwork-dev/Ultraviolet-Static",
-		"wisp-server-node": "^1.1.7",
-		"ws": "^8.18.0"
-	},
 	"devDependencies": {
-		"eslint": "^9.13.0",
-		"prettier": "^3.3.3"
+		"eslint": "^9.39.2",
+		"prettier": "^3.8.1"
 	},
-	"packageManager": "pnpm@9.12.2"
+	"dependencies": {
+		"@mercuryworkshop/bare-mux": "^2.1.8",
+		"@mercuryworkshop/libcurl-transport": "^1.5.2",
+		"@titaniumnetwork-dev/ultraviolet": "^3.2.10",
+		"express": "^5.2.1",
+		"wisp-server-node": "1.1.7",
+		"ws": "^8.19.0"
+	}
 }
