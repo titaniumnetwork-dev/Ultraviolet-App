@@ -3,7 +3,7 @@
 <h1 align="center">Ultraviolet-App</h1>
 
 > [!CAUTION]
-> Please note that this project isn't really maintained anymore before making issues! It has been superseded by [Scramjet](https://github.com/MercuryWorkshop/scramjet). An example application setup can be found [here](https://github.com/MercuryWorkshop/Scramjet-App).
+> Please note that this project is fully unsupported! It has been superseded by [Scramjet](https://github.com/MercuryWorkshop/scramjet). You can follow the guide [here](https://github.com/MercuryWorkshop/scramjet/wiki/Bootstrap-a-new-app) to get a basic app set up.
 
 The deployable all-in-one bundle for [Ultraviolet](https://github.com/titaniumnetwork-dev/Ultraviolet), a highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers and more!
 
